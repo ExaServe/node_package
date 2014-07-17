@@ -62,8 +62,6 @@ install: build
               debian/{{package_name}}/etc/{{package_install_name}}
 
 	mkdir -p debian/{{package_name}}/var/lib
-	cp -R rel/{{package_install_name}}/data/* \
-              debian/{{package_name}}/var/lib/{{package_install_name}}
 
 	install -m755 debian/init.script \
               debian/{{package_name}}/etc/init.d/{{package_install_name}}
