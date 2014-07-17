@@ -21,7 +21,7 @@ SCRIPTNAME=/etc/init.d/$NAME
 . /lib/init/vars.sh
 . /lib/lsb/init-functions
 
-VERBOSE=1
+export VERBOSE=1
 
 #
 # Function that starts the daemon/service
