@@ -236,7 +236,7 @@ case "$1" in
         PROGNAME=`echo $0 | sed 's/.*\///'`
         CMD="$BINDIR/erlexec -boot $RUNNER_BASE_DIR/releases/$APP_VSN/$RUNNER_SCRIPT \
             -mode embedded \
-            -config $RUNNER_ETC_DIR/app.config \
+            -config $RUNNER_BASE_DIR/releases/$APP_VSN/sys.config \
             -pa $RUNNER_PATCH_DIR \
             -args_file $RUNNER_ETC_DIR/vm.args -- ${1+"$@"}"
         export EMU
