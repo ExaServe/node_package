@@ -13,6 +13,7 @@ DESC="{{package_shortdesc}}"
 NAME={{package_install_name}}
 DAEMON=/usr/{{bin_or_sbin}}/$NAME
 SCRIPTNAME=/etc/init.d/$NAME
+VERBOSE=yes
 
 # Read configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
