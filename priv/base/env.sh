@@ -3,7 +3,7 @@
 # ex: ts=4 sw=4 et
 
 # installed by node_package (github.com/basho/node_package)
-export HOME=$HOME
+export HOME=$RUNNER_BASE_DIR
 
 # /bin/sh on Solaris is not a POSIX compatible shell, but /usr/bin/ksh is.
 if [ `uname -s` = 'SunOS' -a "${POSIX_SHELL}" != "true" ]; then
