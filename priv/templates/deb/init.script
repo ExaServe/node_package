@@ -36,7 +36,6 @@ do_start()
     # Startup with the appropriate user
     start-stop-daemon --start \
         --name {{package_install_name}} \
-        --user {{package_install_user}} \
         --exec $DAEMON -- start \
         || return 2
 }
@@ -61,7 +60,6 @@ do_stop()
     start-stop-daemon --stop \
                       --quiet \
                       --retry=TERM/30/KILL/5 \
-                      --user {{package_install_user}} \
                       --exec $ERTS_PATH/run_erl
     return $?
 }
