@@ -30,7 +30,7 @@ update-rc.d {{package_install_name}} defaults >/dev/null
 # chown -R {{package_install_user}}:{{package_install_group}} /etc/{{package_install_name}}
 
 chmod 0755 /var/run/{{package_install_name}} /etc/{{package_install_name}}
-chmod 0644 /etc/{{package_install_name}}/*
+#chmod 0644 /etc/{{package_install_name}}/*
 chmod -R +X /etc/{{package_install_name}}
 chmod 0755 /usr/lib/{{package_install_name}}/lib/env.sh
 
