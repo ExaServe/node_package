@@ -35,6 +35,11 @@ RUN_DIR="/var/run" # for now hard coded unless we find a platform that differs
 PID_DIR=$RUN_DIR/$RUNNER_SCRIPT
 PID_FILE=$PID_DIR/$RUNNER_SCRIPT.pid
 
+# Parse out release and erts info
+START_ERL=`cat $RUNNER_BASE_DIR/releases/start_erl.data`
+ERTS_VSN=${START_ERL% *}
+APP_VSN=${START_ERL#* }
+
 # Threshold where users will be warned of low ulimit file settings
 # default it if it is not set
 ULIMIT_WARN={{runner_ulimit_warn}}
@@ -78,11 +83,6 @@ if [ -z "$COOKIE_ARG" ]; then
     echoerr "vm.args needs to have a -setcookie parameter."
     exit 1
 fi
-
-# Parse out release and erts info
-START_ERL=`cat $RUNNER_BASE_DIR/releases/start_erl.data`
-ERTS_VSN=${START_ERL% *}
-APP_VSN=${START_ERL#* }
 
 # Add ERTS bin dir to our path
 ERTS_PATH=$RUNNER_BASE_DIR/erts-$ERTS_VSN/bin
