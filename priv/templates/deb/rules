@@ -58,8 +58,6 @@ install: build
 	    {{/package_commands}}echo -n; fi
 
 	mkdir -p debian/{{package_name}}/etc/{{package_install_name}}
-	cp -R rel/{{package_install_name}}/etc/* \
-              debian/{{package_name}}/etc/{{package_install_name}}
 
 	mkdir -p debian/{{package_name}}/var/lib
 
