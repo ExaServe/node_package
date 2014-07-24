@@ -51,7 +51,7 @@ WHOAMI=`whoami`
 echoerr() { echo "$@" 1>&2; }
 
 # Extract the target node name from node.args
-NAME_ARG=`egrep '^\-s?name' $RUNNER_ETC_DIR/vm.args`
+NAME_ARG=`egrep '^\-s?name' $RUNNER_BASE_DIR/releases/$APP_VSN/vm.args`
 if [ -z "$NAME_ARG" ]; then
     echoerr "vm.args needs to have either -name or -sname parameter."
     exit 1
@@ -73,7 +73,7 @@ else
 fi
 
 # Extract the target cookie
-COOKIE_ARG=`grep '^\-setcookie' $RUNNER_ETC_DIR/vm.args`
+COOKIE_ARG=`grep '^\-setcookie' $RUNNER_BASE_DIR/releases/$APP_VSN/vm.args`
 if [ -z "$COOKIE_ARG" ]; then
     echoerr "vm.args needs to have a -setcookie parameter."
     exit 1

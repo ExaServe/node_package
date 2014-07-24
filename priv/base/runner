@@ -238,7 +238,7 @@ case "$1" in
             -mode embedded \
             -config $RUNNER_BASE_DIR/releases/$APP_VSN/sys.config \
             -pa $RUNNER_PATCH_DIR \
-            -args_file $RUNNER_ETC_DIR/vm.args -- ${1+"$@"}"
+            -args_file $RUNNER_BASE_DIR/releases/$APP_VSN/vm.args -- ${1+"$@"}"
         export EMU
         export ROOTDIR
         export BINDIR
